@@ -1,0 +1,32 @@
+1) Search Restaurants
+	1) By Name
+	2) By Score
+	3) By Category
+	4) By Price
+	5) By Zip Code
+	6) Different Category Wise List of Restaurants
+	7) Back to Main Menu
+2) Search Food Items
+	1) By Name
+	2) By Name in a Given Restaurant
+	3) By Category
+	4) By Category in a Given Restaurant
+	5) By Price Range
+	6) By Price Range in a Given Restaurant
+	7) Costliest Food Item(s) on the Menu in a Given Restaurant
+	8) List of Restaurants and Total Food Item on the Menu
+	9) Back to Main Menu
+3) Add Restaurant
+	Option (3) of the main menu allows the user to add a new 
+	restaurant to the database. 
+	You must take input for all the information of a restaurant. 
+	Please note that a restaurant must have at least one and 
+	at most three categories.
+4) Add Food Item to the Menu
+	Option (4) of the main menu allows the user to add a food item 
+	to the menu of a specific restaurant. You first take the restaurant
+	name as input and then take input for all the information of a 
+	food item. Please note that the input restaurant must exist in the 
+	database to add the food item to its menu.
+5) Exit System
+	gg ez
