@@ -216,19 +216,20 @@ public class restaurant {
         return isFound;
     }
 
-    public int isFood(String foodName)
+    public List<food> isFood(String foodName)
     {
         // boolean isFound = false;
         // int index = -1;
-        for(int i=0;i<menu.size();i++)
+        List<food> f = new ArrayList<>();
+        for(food i:menu)
         {
-            if(menu.get(i).getFoodName().toUpperCase().equals(foodName.toUpperCase()))
+            if(i.getFoodName().toUpperCase().contains(foodName.toUpperCase()))
             {
                 // isFound = true;
-                return i;
+                f.add(i);
             }
         }
-        return -1;
+        return f;
     }
     // public String toString2() {
     // String str = "";

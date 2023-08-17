@@ -56,7 +56,7 @@ public class restaurantManagerV3 {
         // boolean isFound = false;
         List<restaurant> res = new ArrayList<>();
         for (int i = 0; i < restaurants.size(); i++) {
-            if (restaurants.get(i).getName().toUpperCase().equals(name.toUpperCase())) {
+            if (restaurants.get(i).getName().toUpperCase().contains(name.toUpperCase())) {
                 // isFound = true;
                 // restaurants.get(i).showDetails();
                 res.add(restaurants.get(i));
@@ -92,7 +92,7 @@ public class restaurantManagerV3 {
         for (int i = 0; i < restaurants.size(); i++) {
             // for (int j = 0; j < restaurants.get(i).getCategory().size(); j++) {
             // if
-            // (category.toUpperCase().equals(restaurants.get(i).getCategory().get(j).toUpperCase()))
+            // (category.toUpperCase().contains(restaurants.get(i).getCategory().get(j).toUpperCase()))
             // {
             // isFound = true;
             // restaurants.get(i).showDetails();
@@ -147,7 +147,8 @@ public class restaurantManagerV3 {
     // // System.out.print(allCaterories.get(i) + ": ");
     // // for (int j = 0; j < restaurants.size(); j++) {
     // // for (int k = 0; k < restaurants.get(j).getCategory().size(); k++) {
-    // // if (restaurants.get(j).getCategory().get(k).equals(allCaterories.get(i)))
+    // // if
+    // (restaurants.get(j).getCategory().get(k).contains(allCaterories.get(i)))
     // {
     // // System.out.print(restaurants.get(j).getName() + ",");
     // // }
@@ -172,7 +173,7 @@ public class restaurantManagerV3 {
         // System.out.print(allCaterories.get(i) + ": ");
         // for (int j = 0; j < restaurants.size(); j++) {
         // for (int k = 0; k < restaurants.get(j).getCategory().size(); k++) {
-        // if (restaurants.get(j).getCategory().get(k).equals(allCaterories.get(i))) {
+        // if (restaurants.get(j).getCategory().get(k).contains(allCaterories.get(i))) {
         // System.out.print(restaurants.get(j).getName() + ",");
         // }
         // }
@@ -205,13 +206,13 @@ public class restaurantManagerV3 {
         List<food> f = new ArrayList<>();
         // System.out.println(foods.size());
         // for (int i = 0; i < foods.size(); i++) {
-        // if (foods.get(i).getFoodName().toUpperCase().equals(name.toUpperCase())) {
+        // if (foods.get(i).getFoodName().toUpperCase().contains(name.toUpperCase())) {
         // isFound = true;
         // foods.get(i).showDetails();
         // }
         // }
         for (food i : foods) {
-            if (i.getFoodName().toUpperCase().equals(name.toUpperCase())) {
+            if (i.getFoodName().toUpperCase().contains(name.toUpperCase())) {
                 // isFound = true;
                 // i.showDetails();
                 f.add(i);
@@ -234,14 +235,13 @@ public class restaurantManagerV3 {
 
     public List<food> searchFoodByRestaurant(String foodName, String restaurantName) {
         // boolean isFound = false;
-        List<food> f = new ArrayList<>();
         // for (int i = 0; i < restaurants.size(); i++) {
         // if
-        // (restaurants.get(i).getName().toUpperCase().equals(restaurantName.toUpperCase()))
+        // (restaurants.get(i).getName().toUpperCase().contains(restaurantName.toUpperCase()))
         // {
         // for (int j = 0; j < restaurants.get(i).getmenu().size(); j++) {
         // if (restaurants.get(i).getmenu().get(j).getFoodName().toUpperCase()
-        // .equals(foodName.toUpperCase())) {
+        // .contains(foodName.toUpperCase())) {
         // isFound = true;
         // restaurants.get(i).getmenu().get(j).showDetails();
         // }
@@ -249,12 +249,12 @@ public class restaurantManagerV3 {
         // }
         // }
         restaurant res = getRestaurant(restaurantName);
-        int index = res.isFood(foodName);
-        if (index != -1) {
-            // isFound = true;
-            // res.getmenu().get(index).showDetails();
-            f.add(res.getmenu().get(index));
-        }
+        List<food> f =res.isFood(foodName);
+        // if (index != -1) {
+        //     // isFound = true;
+        //     // res.getmenu().get(index).showDetails();
+        //     f.add(res.getmenu().get(index));
+        // }
         return f;
         // if (!isFound) {
         // System.out.println("No such food item with this name on the menu of this
@@ -268,7 +268,8 @@ public class restaurantManagerV3 {
         // System.out.println(categories.size());
         // for (int i = 0; i < categories.size(); i++) {
         // System.out.println(categories.get(i).getName());
-        // if (categories.get(i).getName().toUpperCase().equals(category.toUpperCase()))
+        // if
+        // (categories.get(i).getName().toUpperCase().contains(category.toUpperCase()))
         // {
         // isFound = true;
         // System.out.println();
@@ -293,11 +294,11 @@ public class restaurantManagerV3 {
         List<food> f = new ArrayList<>();
         // for (int i = 0; i < restaurants.size(); i++) {
         // if
-        // (restaurants.get(i).getName().toUpperCase().equals(restaurant.toUpperCase()))
+        // (restaurants.get(i).getName().toUpperCase().contains(restaurant.toUpperCase()))
         // {
         // for (int j = 0; j < restaurants.get(i).getmenu().size(); j++) {
         // if (restaurants.get(i).getmenu().get(j).getCategory().toUpperCase()
-        // .equals(category.toUpperCase())) {
+        // .contains(category.toUpperCase())) {
         // isFound = true;
         // restaurants.get(i).getmenu().get(j).showDetails();
         // }
@@ -367,7 +368,7 @@ public class restaurantManagerV3 {
     // boolean isFound = false;
     // for (int i = 0; i < restaurants.size(); i++) {
     // if
-    // (restaurants.get(i).getName().toUpperCase().equals(restaurant.toUpperCase()))
+    // (restaurants.get(i).getName().toUpperCase().contains(restaurant.toUpperCase()))
     // {
     // isFound = true;
     // restaurants.get(i).displayCosliestFood();
@@ -432,24 +433,34 @@ public class restaurantManagerV3 {
         return true;
     }
 
-    // public void addRestaurant(int id, String name, double score, String price, String zip, List<String> cat) {
-    //     boolean isValid = isRestaurantValid(name);
-    //     if (isValid) {
-    //         restaurants.add(new restaurant(id, name, score, price, zip, cat));
-    //         for (String i : cat) {
-    //             if (!isCat(i)) {
-    //                 AllRestCategories.add(i);
-    //                 // categories.add(new category(i));
-    //             }
-    //         }
-    //         System.out.println("Restaurant added successfully");
-    //     } else {
-    //         System.out.println("Restaurant of the same name is already added");
-    //     }
+    public boolean isRestaurantValid(int id) {
+        for (restaurant i : restaurants) {
+            if (i.getId() == id) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // public void addRestaurant(int id, String name, double score, String price,
+    // String zip, List<String> cat) {
+    // boolean isValid = isRestaurantValid(name);
+    // if (isValid) {
+    // restaurants.add(new restaurant(id, name, score, price, zip, cat));
+    // for (String i : cat) {
+    // if (!isCat(i)) {
+    // AllRestCategories.add(i);
+    // // categories.add(new category(i));
+    // }
+    // }
+    // System.out.println("Restaurant added successfully");
+    // } else {
+    // System.out.println("Restaurant of the same name is already added");
+    // }
     // }
 
     public int addRestaurant(restaurant r) {
-        boolean isValid = isRestaurantValid(r.getName());
+        boolean isValid = isRestaurantValid(r.getName()) && isRestaurantValid(r.getId());
         if (isValid) {
             restaurants.add(new restaurant(r.getId(), r.getName(), r.getScore(), r.getPrice(), r.getZipCode(),
                     r.getCategory()));
@@ -481,7 +492,7 @@ public class restaurantManagerV3 {
         if (isFoodValid(f)) {
             foods.add(f);
             // for (restaurant i : restaurants) {
-            // if (i.getName().toUpperCase().equals(r.toUpperCase())) {
+            // if (i.getName().toUpperCase().contains(r.toUpperCase())) {
             // System.out.println(i.getName());
             // i.addFood(f);
             // break;
@@ -490,7 +501,7 @@ public class restaurantManagerV3 {
             restaurant res = getRestaurant(r);
             res.addFood(f);
             // for (category i : categories) {
-            // if (i.getName().toUpperCase().equals(f.getCategory().toUpperCase())) {
+            // if (i.getName().toUpperCase().contains(f.getCategory().toUpperCase())) {
             // i.addFood(f);
             // break;
             // }
@@ -514,7 +525,7 @@ public class restaurantManagerV3 {
                 }
             }
             // for (category i : categories) {
-            // if (i.getName().toUpperCase().equals(f.getCategory().toUpperCase())) {
+            // if (i.getName().toUpperCase().contains(f.getCategory().toUpperCase())) {
             // i.addFood(f);
             // break;
             // }

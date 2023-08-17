@@ -96,33 +96,41 @@ public class restaurantAppV2 {
                         int choice2 = Integer.parseInt(scanner.nextLine());
                         switch (choice2) {
                             case 1:
+                                System.out.print("Enter a restaurant name: ");
                                 String name1 = scanner.nextLine();
                                 List<restaurant> resName = RestaurantManager.searchRestaurantByName(name1);
                                 showRestaurant(resName);
                                 break;
                             case 2:
+                                System.out.print("Enter a lower score: ");
                                 double low = Double.parseDouble(scanner.nextLine());
+                                System.out.print("Enter a upper score: ");
                                 double high = Double.parseDouble(scanner.nextLine());
                                 // System.out.println(low + " " + high);
                                 List<restaurant> resSCore = RestaurantManager.searchRestaurantByScore(low, high);
                                 showRestaurant(resSCore);
                                 break;
                             case 3:
+                                System.out.print("Enter a category to search: ");
                                 String category = scanner.nextLine();
                                 List<restaurant> resCat = RestaurantManager.searchRestaurantByCategory(category);
                                 showRestaurant(resCat);
                                 break;
                             case 4:
+                                System.out.print("Enter price to search: ");
                                 String price = scanner.nextLine();
                                 List<restaurant> resPrice = RestaurantManager.searchRestaurantByPrice(price);
                                 showRestaurant(resPrice);
                                 break;
                             case 5:
+                                System.out.print("Enter ZipCode to search: ");
                                 String zip = scanner.nextLine();
                                 List<restaurant> resZip = RestaurantManager.searchRestaurantByZip(zip);
                                 showRestaurant(resZip);
                                 break;
                             case 6:
+                                System.out.println("Showing Restaurants in the database by different category: ...");
+                                Thread.sleep(1000);
                                 Map<String, String> map = RestaurantManager.searchRestaurantByDiffCategory();
                                 printMappedRestaurant(map);
                                 break;
@@ -149,41 +157,52 @@ public class restaurantAppV2 {
 
                         switch (choice3) {
                             case 1:
+                                System.out.print("Enter a food name: ");
                                 String foodName = scanner.nextLine();
                                 List<food> fName = RestaurantManager.searchFoodByName(foodName);
                                 showFood(fName);
                                 break;
 
                             case 2:
+                                System.out.print("Enter a food name: ");
                                 String foodname = scanner.nextLine();
+                                System.out.print("Enter a restaurant name: ");
                                 String resName = scanner.nextLine();
                                 List<food> fNameRes = RestaurantManager.searchFoodByRestaurant(foodname, resName);
                                 showFood(fNameRes);
                                 break;
 
                             case 3:
+                                System.out.print("Enter a food category: ");
                                 String foodcat = scanner.nextLine();
                                 List<food> fCat = RestaurantManager.searchFoodByCategory(foodcat);
                                 showFood(fCat);
                                 break;
 
                             case 4:
+                                System.out.print("Enter a food category: ");
                                 String foodCategory = scanner.nextLine();
+                                System.out.print("Enter a restaurant name: ");
                                 String res = scanner.nextLine();
                                 List<food> fCatRes = RestaurantManager.searchFoodByCategoryRes(foodCategory, res);
                                 showFood(fCatRes);
                                 break;
 
                             case 5:
+                                System.out.print("Enter lower price: ");
                                 double l = Double.parseDouble(scanner.nextLine());
+                                System.out.print("Enter upper price: ");
                                 double h = Double.parseDouble(scanner.nextLine());
                                 List<food> fPrice = RestaurantManager.searchFoodByPrice(l, h);
                                 showFood(fPrice);
                                 break;
 
                             case 6:
+                                System.out.print("Enter a lower price: ");
                                 double low = Double.parseDouble(scanner.nextLine());
+                                System.out.print("Enter upper price: ");
                                 double high = Double.parseDouble(scanner.nextLine());
+                                System.out.print("Enter a restaurant name: ");
                                 String rest = scanner.nextLine();
                                 List<food> fPriceRes = RestaurantManager.searchFoodByPriceRes(low, high, rest);
                                 showFood(fPriceRes);
@@ -191,12 +210,17 @@ public class restaurantAppV2 {
                                 break;
 
                             case 7:
+                                System.out.print("Enter a restaurant name: ");
                                 String R = scanner.nextLine();
+                                System.out.println("Showing costliest food in restaurant " + R + "...");
+                                Thread.sleep(1000);
                                 List<food> fCostliest = RestaurantManager.costliestFood(R);
                                 showFood(fCostliest);
                                 break;
 
                             case 8:
+                                System.out.println("Displaying total food of all restaurants...");
+                                Thread.sleep(1000);
                                 Map<String, Integer> mapFood = RestaurantManager.displayTotalFood();
                                 printMappedFood(mapFood);
                                 break;
