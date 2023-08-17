@@ -14,27 +14,6 @@ public class FileOp {
     private static final String OUTPUT_FILE_NAME2 = "menu.txt";
     private static final DecimalFormat df = new DecimalFormat("#.##");
 
-    // public static void main(String[] args) throws Exception {
-    // BufferedReader br = new BufferedReader(new FileReader(INPUT_FILE_NAME));
-    // BufferedWriter bw = new BufferedWriter(new FileWriter(OUTPUT_FILE_NAME));
-    // while (true) {
-    // String line = br.readLine();
-    // if (line == null)
-    // break;
-    // System.out.println(line);
-    // String[] array = line.split(",", -1);
-    // for (int i = 0; i < array.length; i++) {
-    // System.out.println(array[i]);
-    // // bw.write(array[i]);
-    // }
-    // }
-    // br.close();
-
-    // String text = "Hello World";
-    // bw.write(text);
-    // bw.write(System.lineSeparator());
-    // bw.close();
-    // }
 
     public List<Restaurant> fileRestaurant() {
         List<Restaurant> restaurantList = new ArrayList<>();
@@ -42,12 +21,7 @@ public class FileOp {
             BufferedReader br = new BufferedReader(new FileReader(INPUT_FILE_NAME1));
             String line;
             while ((line = br.readLine()) != null) {
-                // System.out.println(line);
                 String[] array = line.split(",", -1);
-                // if (array.length >= 3) {
-                // String name = array[0];
-                // String location = array[1];
-                // String cuisine = array[2];
                 int id = Integer.parseInt(array[0]);
                 String name = array[1];
                 double score = Double.parseDouble(array[2]);
@@ -61,7 +35,6 @@ public class FileOp {
                 }
                 Restaurant restaurant = new Restaurant(id, name, score, price, zip, category);
                 restaurantList.add(restaurant);
-                // }
             }
             br.close();
         } catch (Exception e) {
@@ -76,7 +49,6 @@ public class FileOp {
             BufferedReader br = new BufferedReader(new FileReader(INPUT_FILE_NAME2));
             String line;
             while ((line = br.readLine()) != null) {
-                // System.out.println(line);
                 String[] array = line.split(",", -1);
                 int id = Integer.parseInt(array[0]);
                 String category = array[1];

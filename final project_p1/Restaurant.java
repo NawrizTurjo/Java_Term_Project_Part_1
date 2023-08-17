@@ -40,8 +40,6 @@ public class Restaurant {
         this.menu = new ArrayList<>();
     }
 
-    
-
     public int getId() {
         return id;
     }
@@ -99,98 +97,7 @@ public class Restaurant {
     {
         this.score = score;
     }
-    // @Override
-    // public String toString() {
-    // String str = "";
-    // str += "Restaurant ID: " + this.id + "\n";
-    // str += "Restaurant Name: " + this.name + "\n";
-    // str += "Price: " + this.price + "\n";
-    // str += "Zip Code: " + this.zipCode + "\n";
-    // str += "Category: " + this.category + "\n";
-    // str += "menu: " + this.menu + "\n";
-    // return str;
-    // }
-
-    // @Override
-    // public String toString() {
-    //     String str = "";
-    //     str += "Restaurant ID: " + this.id + "\n";
-    //     str += "Restaurant Name: " + this.name + "\n";
-    //     str += "Price: " + this.price + "\n";
-    //     str += "Zip Code: " + this.zipCode + "\n";
-    //     str += "Category: " + this.category + "\n";
-    //     str += "menu: " + "\n";
-    //     for (int i = 0; i < this.menu.size(); i++) {
-    //         str += this.menu.get(i).toString();
-    //     }
-    //     return str;
-    // }
-
-    // public void showDetails()
-    // {
-    //     System.out.println("Restaurant ID: "+this.id);
-    //     System.out.println("Restaurant Name: "+this.name);
-    //     System.out.println("Score: "+this.score);
-    //     System.out.println("Price: "+this.price);
-    //     System.out.println("Zip Code: "+this.zipCode);
-    //     System.out.println("Categories: ");
-    //     for(String i:category)
-    //     {
-    //         System.out.println(i);
-    //     }
-    //     System.out.println("Menu: ");
-    //     for(Food i:menu)
-    //     {
-    //         System.out.print("\t");
-    //         i.showDetails();
-    //     }
-    // }
-
-    // public boolean searchFood(String FoodName)
-    // {
-    //     int FoodCount = 0;
-    //     for(Food i:menu)
-    //     {
-    //         if(i.getFoodName().toUpperCase().equals(FoodName.toUpperCase()))
-    //         {
-    //             i.showDetails();
-    //             FoodCount++;
-    //         }
-    //     }
-    //     if(FoodCount == 0)  return false;
-    //     return true;
-    // }
-
-    // public boolean searchCatagory(String catagoryName)
-    // {
-    //     boolean isFound = false;
-    //     for(String i:category)
-    //     {
-    //         if(i.toUpperCase().equals(catagoryName.toUpperCase()))
-    //         {
-    //             isFound = true; 
-    //         }
-    //     }
-    //     return isFound;
-    // }
-
-    // public void displayCosliestFood()
-    // {
-    //     double costliest = menu.get(0).getPrice();
-    //     int index=0;
-    //     for(int i=0;i<menu.size();i++)
-    //     {
-    //         if(menu.get(i).getPrice()>costliest)
-    //         {
-    //             costliest = menu.get(i).getPrice();
-    //             index = i;
-    //             menu.get(index).showDetails();
-    //         }
-    //     }
-    // }
-
     
-
     public int getTotalFood()
     {
         return menu.size();
@@ -218,31 +125,14 @@ public class Restaurant {
 
     public List<Food> isFood(String foodName)
     {
-        // boolean isFound = false;
-        // int index = -1;
         List<Food> f = new ArrayList<>();
         for(Food i:menu)
         {
             if(i.getFoodName().toUpperCase().contains(foodName.toUpperCase()))
             {
-                // isFound = true;
                 f.add(i);
             }
         }
         return f;
     }
-    // public String toString2() {
-    // String str = "";
-    // str += "Restaurant ID: " + this.id + "\n";
-    // str += "Restaurant Name: " + this.name + "\n";
-    // str += "Price: " + this.price + "\n";
-    // str += "Zip Code: " + this.zipCode + "\n";
-    // str += "Category: " + this.category + "\n";
-    // str += "menu: " + "\n";
-    // for (int i = 0; i < this.menu.size(); i++) {
-    // str += this.menu.get(i).toString2();
-    // }
-    // return str;
-    // }
-
 }

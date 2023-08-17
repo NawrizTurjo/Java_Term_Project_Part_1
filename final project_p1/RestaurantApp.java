@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-// import java.lang.*;
 
 public class RestaurantApp {
     public static void showFood(List<Food> f) {
@@ -104,34 +103,53 @@ public class RestaurantApp {
                                 System.out.print("Enter a restaurant name to search: ");
                                 String name1 = scanner.nextLine();
                                 List<Restaurant> resName = RestaurantManager.searchRestaurantByName(name1);
-                                showRestaurant(resName);
+                                if (resName.size() > 0) {
+                                    showRestaurant(resName);
+                                } else {
+                                    System.out.println("No such restaurant with this name");
+                                }
                                 break;
                             case 2:
                                 System.out.print("Enter a lower score: ");
                                 double low = Double.parseDouble(scanner.nextLine());
                                 System.out.print("Enter a upper score: ");
                                 double high = Double.parseDouble(scanner.nextLine());
-                                // System.out.println(low + " " + high);
                                 List<Restaurant> resSCore = RestaurantManager.searchRestaurantByScore(low, high);
-                                showRestaurant(resSCore);
+                                if (resSCore.size() > 0) {
+                                    showRestaurant(resSCore);
+                                } else {
+                                    System.out.println("No such restaurant with this score range");
+                                }
                                 break;
                             case 3:
                                 System.out.print("Enter a category to search: ");
                                 String category = scanner.nextLine();
                                 List<Restaurant> resCat = RestaurantManager.searchRestaurantByCategory(category);
-                                showRestaurant(resCat);
+                                if (resCat.size() > 0) {
+                                    showRestaurant(resCat);
+                                } else {
+                                    System.out.println("No such restaurant with this category");
+                                }
                                 break;
                             case 4:
                                 System.out.print("Enter price to search: ");
                                 String price = scanner.nextLine();
                                 List<Restaurant> resPrice = RestaurantManager.searchRestaurantByPrice(price);
-                                showRestaurant(resPrice);
+                                if (resPrice.size() > 0) {
+                                    showRestaurant(resPrice);
+                                } else {
+                                    System.out.println("No such restaurant with this price");
+                                }
                                 break;
                             case 5:
                                 System.out.print("Enter ZipCode to search: ");
                                 String zip = scanner.nextLine();
                                 List<Restaurant> resZip = RestaurantManager.searchRestaurantByZip(zip);
-                                showRestaurant(resZip);
+                                if (resZip.size() > 0) {
+                                    showRestaurant(resZip);
+                                } else {
+                                    System.out.println("No such restaurant with this zip code");
+                                }
                                 break;
                             case 6:
                                 System.out.println("Showing Restaurants in the database by different category: ...");
@@ -165,7 +183,11 @@ public class RestaurantApp {
                                 System.out.print("Enter a food name: ");
                                 String foodName = scanner.nextLine();
                                 List<Food> fName = RestaurantManager.searchFoodByName(foodName);
-                                showFood(fName);
+                                if (fName.size() > 0) {
+                                    showFood(fName);
+                                } else {
+                                    System.out.println("No such food item with this name");
+                                }
                                 break;
 
                             case 2:
@@ -174,14 +196,23 @@ public class RestaurantApp {
                                 System.out.print("Enter a restaurant name: ");
                                 String resName = scanner.nextLine();
                                 List<Food> fNameRes = RestaurantManager.searchFoodByNameOfRestaurant(foodname, resName);
-                                showFood(fNameRes);
+                                if (fNameRes.size() > 0) {
+                                    showFood(fNameRes);
+                                } else {
+                                    System.out
+                                            .println("No such food item with this name on the menu of this restaurant");
+                                }
                                 break;
 
                             case 3:
                                 System.out.print("Enter a food category: ");
                                 String foodcat = scanner.nextLine();
                                 List<Food> fCat = RestaurantManager.searchFoodByCategory(foodcat);
-                                showFood(fCat);
+                                if (fCat.size() > 0) {
+                                    showFood(fCat);
+                                } else {
+                                    System.out.println("No such food item with this category");
+                                }
                                 break;
 
                             case 4:
@@ -189,8 +220,14 @@ public class RestaurantApp {
                                 String foodCategory = scanner.nextLine();
                                 System.out.print("Enter a restaurant name: ");
                                 String res = scanner.nextLine();
-                                List<Food> fCatRes = RestaurantManager.searchFoodByCategoryOfRestaurant(foodCategory, res);
-                                showFood(fCatRes);
+                                List<Food> fCatRes = RestaurantManager.searchFoodByCategoryOfRestaurant(foodCategory,
+                                        res);
+                                if (fCatRes.size() > 0) {
+                                    showFood(fCatRes);
+                                } else {
+                                    System.out.println(
+                                            "No such food item with this category on the menu of this restaurant");
+                                }
                                 break;
 
                             case 5:
@@ -199,7 +236,11 @@ public class RestaurantApp {
                                 System.out.print("Enter upper price: ");
                                 double h = Double.parseDouble(scanner.nextLine());
                                 List<Food> fPrice = RestaurantManager.searchFoodByPrice(l, h);
-                                showFood(fPrice);
+                                if (fPrice.size() > 0) {
+                                    showFood(fPrice);
+                                } else {
+                                    System.out.println("No such food item with this price range");
+                                }
                                 break;
 
                             case 6:
@@ -210,8 +251,13 @@ public class RestaurantApp {
                                 System.out.print("Enter a restaurant name: ");
                                 String rest = scanner.nextLine();
                                 List<Food> fPriceRes = RestaurantManager.searchFoodByPriceOfRestaurant(low, high, rest);
-                                showFood(fPriceRes);
-                                ;
+                                if (fPriceRes.size() > 0) {
+                                    showFood(fPriceRes);
+                                } else {
+                                    System.out.println(
+                                            "No such food item with this price range on the menu of this restaurant");
+                                }
+
                                 break;
 
                             case 7:
@@ -245,12 +291,7 @@ public class RestaurantApp {
 
                     case 3:
                         String restInfo = scanner.nextLine();
-                        // System.out.println(restInfo);
                         String[] array = restInfo.split(",", -1);
-                        // for(String i:array)
-                        // {
-                        // System.out.println(i);
-                        // }
                         int id = Integer.parseInt(array[0]);
                         String Name = array[1];
                         double score = Double.parseDouble(array[2]);
@@ -274,19 +315,13 @@ public class RestaurantApp {
 
                     case 4:
                         String foodRes = scanner.nextLine();
-                        // System.out.println(foodRes);
                         boolean isRestaurant = !(RestaurantManager.isRestaurantValid(foodRes));
                         String foodInfo = scanner.nextLine();
-                        // System.out.println(foodInfo);
                         String[] foodArray = foodInfo.split(",", -1);
-                        // for (String i : foodArray) {
-                        // System.out.println(i);
-                        // }
                         int foodId = RestaurantManager.getResId(foodRes);
                         String foodCat = foodArray[0];
                         String foodName = foodArray[1];
                         double foodPrice = Double.parseDouble(foodArray[2]);
-                        // System.out.println(foodCat + " " + foodName + " " + foodPrice);
 
                         Food f = new Food(foodId, foodCat, foodName, foodPrice);
                         int foodAdded = RestaurantManager.addFood(f);
@@ -305,20 +340,15 @@ public class RestaurantApp {
                 }
                 System.out.println();
             } while (choice != 5);
+            System.out.println("Exiting the system....");
+            Thread.sleep(1000);
             scanner.close();
+            System.out.println("Updating info...");
+            Thread.sleep(1000);
             fileReader.writeFile(F, r);
+            System.out.println("Exit");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
-/*
- * 5,hasbi,2.5,$$$$,sizan,apurbo,jonathon
- * hasbi
- * mohi,Shovon,69.99
- * 7,hasbullah,2.9,$$$$,sizu,apurboss,jonathon,shantoo
- * hasbullah
- * mohi,Shovon,69.99
- * 
- */

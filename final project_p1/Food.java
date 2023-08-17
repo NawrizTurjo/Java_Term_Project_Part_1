@@ -50,24 +50,6 @@ public class Food {
         this.price = price;
     }
 
-    // @Override
-    // public String toString()
-    // {
-    // String str = "";
-    // str += "Restaurant ID: " + this.restaurantId + "\n";
-    // str += "Category: " + this.category + "\n";
-    // str += "Food Name: " + this.foodName + "\n";
-    // str += "Price: " + this.price + "\n";
-    // return str;
-    // }
-
-    // public void showDetails() {
-    //     System.out.println("Restaurant Id: " + this.restaurantId);
-    //     System.out.println("Category: " + this.category);
-    //     System.out.println("Food Name: " + this.foodName);
-    //     System.out.println("Price: " + this.price);
-    // }
-
     public boolean isEqual(Food f) {
         if (this.foodName.toUpperCase().equals(f.getFoodName().toUpperCase()) &&
                 this.restaurantId == f.getRestaurantId() &&
@@ -77,22 +59,4 @@ public class Food {
         }
         return false;
     }
-
-    // public String toFileString()
-    // {
-    // String str = "";
-    // str += this.restaurantId + ",";
-    // str += this.category + ",";
-    // str += this.foodName + ",";
-    // str += this.price;
-    // return str;
-    // }
-
-    // public static food fromString(String str)
-    // {
-    // String [] array = str.split(",", -1);
-    // food f = new food(array[0], array[1], array[2], array[3]);
-    // return f;
-    // }
-
 }
