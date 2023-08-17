@@ -1,78 +1,88 @@
-# CSE 108: Java Term Project (Part 1)
-## Restaurant Database System
+<div align="center">
+  <img src="restaurant-logo.png" alt="Restaurant Database System Logo" width="200">
+  <h1>CSE 108: Java Term Project (Part 1)</h1>
+  <h2>Restaurant Database System</h2>
+</div>
 
-This project involves writing a program to implement a simple restaurant database system. The system aims to manage a database of restaurants along with their food menus and offers various functionalities for searching, adding, and reporting restaurant and food item data.
+## 🍔 Overview
 
-## Features
+Welcome to the **Restaurant Database System**, a Java program designed to manage a delightful assortment of restaurants and their mouthwatering food menus. This interactive system allows you to perform various operations, from searching for restaurants and food items to adding new establishments and delectable dishes to the collection.
 
-The Restaurant Database System provides the following features:
+## 🌟 Key Features
 
-- Maintain a list of Restaurant objects
-- Each Restaurant object contains information such as Id, Name, Score, Price ($, $$, or $$$), Zip Code, and Categories
-- Maintain a list of Food objects
-- Each Food object represents a food item on a specific restaurant's menu and contains information like Restaurant Id, Category, Name, and Price
-- Add restaurants to the list
-- Add food items to restaurant menus
-- Search and display restaurant and food item details based on different criteria
-- Generate reports and statistics for restaurants and food items
-- Load and save restaurant and menu data from/to text files
-- Automatic loading and saving of data on program start and exit
+The **Restaurant Database System** boasts a range of features, including:
 
-## Main Menu
+- **Restaurant Management:** Maintain a collection of restaurants, each with unique attributes.
+- **Food Item Catalog:** Keep track of food items on restaurant menus with relevant details.
+- **Search and Discover:** Search for restaurants and food items based on multiple criteria.
+- **Data Persistence:** Automatically load and save data from and to text files.
+- **Visual Reports:** Generate statistics and insights about the restaurants and food items.
 
-When the program is running, it will display a command-line-based main menu with the following options:
+## 🚀 Getting Started
 
-1) Search Restaurants
-2) Search Food Items
-3) Add Restaurant
-4) Add Food Item to the Menu
-5) Exit System
+To run this enchanting program:
 
-## Option (1) - Search Restaurants
+1. Ensure you have the Java Development Kit (JDK) installed.
+2. Compile the program: `javac restaurantAppV2.java`
+3. Start the magic: `java restaurantAppV2`
 
-Option (1) of the main menu allows the user to search for restaurants in the database. The user can choose from various search criteria, including Name, Score, Category, Price, Zip Code, and more.
+## 🌮 Main Menu Magic
 
-## Option (2) - Search Food Items
+Experience the wonder of the **Main Menu**:
 
-Option (2) of the main menu enables users to search for food items on restaurant menus. Similar to the restaurant search, users can specify criteria such as Name, Category, Price Range, and more.
+Main Menu:
 
-## Option (3) - Add Restaurant
+1. Search Restaurants
+2. Search Food Items
+3. Add Restaurant
+4. Add Food Item to the Menu
+5. Exit System
 
-Option (3) of the main menu allows users to add new restaurants to the database. Users need to input all the required information for the new restaurant.
 
-## Option (4) - Add Food Item to the Menu
+## 🍽️ Option (1) - Search Restaurants
 
-Option (4) of the main menu lets users add food items to the menu of a specific restaurant. Users first enter the restaurant name and then provide information about the new food item.
+Discover restaurants using a variety of criteria, including Name, Score, Category, Price, and Zip Code.
 
-## Option (5) - Exit System
+## 🍕 Option (2) - Search Food Items
 
-Option (5) exits the program. All restaurant and food item data in memory are automatically saved back to 'restaurant.txt' and 'menu.txt' files.
+Uncover delightful food items on menus based on Name, Category, Price Range, and more.
 
-## Input File Format
+## 🏢 Option (3) - Add Restaurant
 
-The input data files 'restaurant.txt' and 'menu.txt' have specific formats. 'restaurant.txt' contains details about restaurants, and 'menu.txt' contains details about food items on restaurant menus. Both files use a comma-separated format.
+Enchant the database with new restaurants. Provide all required information, including up to three enchanting categories.
 
-## Assumptions
+## 🍟 Option (4) - Add Food Item to the Menu
 
-Several assumptions are made during the implementation of this project. These include:
+Add magical food items to a restaurant's menu. Ensure the chosen restaurant exists before adding the delight.
 
-- No hardcoding is allowed
-- Design code for reusability
-- All restaurant names are unique
-- Food items in a restaurant's menu are unique
-- No limits on the number of restaurants or food items
-- Case-insensitive searches
-- Data file formats are correct and do not need validation
-- Command-line interface only, no JavaFX or Java Swing
+## ✨ Option (5) - Exit System
 
-## Price Symbols ($ , $$ , $$$)
+Bid farewell to the magic, and let your data be saved automatically.
 
-The price symbols ($ , $$ , $$$) refer to the cost per person for an average meal: $1 to $10, $11 to $20, and $21 to $30, respectively.
+## 📦 Input Files
 
-## Running the Program
+Load the magic of your data from `restaurant.txt` and `menu.txt`. Both files use a comma-separated format.
 
-To run the program, compile and execute the main Java class. Ensure that you have Java Development Kit (JDK) installed and configured correctly.
+## 🎩 Assumptions and Enchantments
 
-```bash
-javac RestaurantApp.java
-java RestaurantApp
+Embrace these enchantments during your magical journey:
+
+- No hardcoding allowed.
+- Design code for reusability.
+- All restaurant names are unique.
+- Food items are unique on restaurant menus.
+- No limits on restaurants or food items.
+- Searches are case-insensitive.
+- Data file formats are correct; no validation needed.
+- Command-line interface only; no JavaFX or Swing.
+
+## 💸 Price Symbols ($, $$, $$$)
+
+The mystical price symbols indicate cost per person for an average meal: $1 to $10, $11 to $20, and $21 to $30.
+
+## 🌟 Now, Begin Your Journey
+
+Explore the enchanted world of restaurants and food items with the **Restaurant Database System**. Let the magic unfold!
+
+---
+**Note**: This document is a mere enchantment and provides a glimpse into the project's fantastical world. Actual program behavior and implementation may carry their own unique enchantments. Detailed coding and functionality should be developed in accordance with the magical project specifications and requirements.
