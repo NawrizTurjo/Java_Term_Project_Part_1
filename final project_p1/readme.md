@@ -76,9 +76,9 @@ Embrace these enchantments during your magical journey:
 - Data file formats are correct; no validation needed.
 - Command-line interface only; no JavaFX or Swing.
 
-## 💸 Price Symbols ($, $$, $$$)
+## 💸 Price Symbols 
 
-The mystical price symbols indicate cost per person for an average meal: $1 to $10, $11 to $20, and $21 to $30.
+The mystical price symbols indicate cost per person for an average meal.
 
 ## 🌟 Now, Begin Your Journey
 
