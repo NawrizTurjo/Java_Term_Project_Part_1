@@ -65,6 +65,7 @@ public class RestaurantApp {
 
     public static void main(String[] args) throws Exception {
         try {
+            int change = 0;
             Scanner scanner = new Scanner(System.in);
             RestaurantManager RestaurantManager = new RestaurantManager("Restaurants");
             FileOp fileReader = new FileOp();
@@ -283,53 +284,74 @@ public class RestaurantApp {
                             case 9:
                                 break;
                             default:
-                                System.out.println("Error: f is not a valid operation.");
+                                System.out.println("Error: This is not a valid operation.");
                                 break;
 
                         }
                         break;
 
                     case 3:
+                        System.out.print("Enter Restaurant id: ");
+                        int id = Integer.parseInt(scanner.nextLine());
+
+                        boolean isId = (RestaurantManager.isRestaurantValid(id));
+                        System.out.print("Enter Restaurant Name: ");
+                        String Name = scanner.nextLine();
+
+                        boolean isName = (RestaurantManager.isRestaurantValid(Name));
+                        System.out.print("Enter Restaurant Score: ");
+                        double score = Double.parseDouble(scanner.nextLine());
+                        System.out.print("Enter Restaurant Price: ");
+                        String price = scanner.nextLine();
+                        System.out.print("Enter Restaurant Zip Code: ");
+                        String Z = scanner.nextLine();
+                        System.out.print("Enter Categories: ");
                         String restInfo = scanner.nextLine();
                         String[] array = restInfo.split(",", -1);
-                        int id = Integer.parseInt(array[0]);
-                        String Name = array[1];
-                        double score = Double.parseDouble(array[2]);
-                        String price = array[3];
-                        String Z = array[4];
                         List<String> cateList = new ArrayList<>();
-                        for (int i = 5; i < array.length; i++) {
+                        for (int i = 0; i < array.length; i++) {
                             if (array[i] != "") {
                                 cateList.add(array[i]);
                             }
                         }
                         Restaurant newRestaurant = new Restaurant(id, Name, score, price, Z, cateList);
-                        int addedRes = RestaurantManager
-                                .addRestaurant(newRestaurant);
-                        if (addedRes == 1) {
+                        RestaurantManager.addRestaurant(newRestaurant);
+                        if (isId == true && isName == true) {
                             System.out.println("Restaurant added successfully");
                             r.add(newRestaurant);
-                        } else
-                            System.out.println("The Name already exists");
+                            change = 1;
+                        } else if (isId == false && isName == true) {
+                            System.out.println("The Id already exists.");
+                        } else if (isId == true && isName == false) {
+                            System.out.println("This name already exists.");
+                        } else {
+                            System.out.println("Both id and name are invalid.");
+                        }
                         break;
 
                     case 4:
+                        System.out.println("Enter Restaurant Name: ");
                         String foodRes = scanner.nextLine();
                         boolean isRestaurant = !(RestaurantManager.isRestaurantValid(foodRes));
-                        String foodInfo = scanner.nextLine();
-                        String[] foodArray = foodInfo.split(",", -1);
-                        int foodId = RestaurantManager.getResId(foodRes);
-                        String foodCat = foodArray[0];
-                        String foodName = foodArray[1];
-                        double foodPrice = Double.parseDouble(foodArray[2]);
-
-                        Food f = new Food(foodId, foodCat, foodName, foodPrice);
-                        int foodAdded = RestaurantManager.addFood(f);
-                        if (foodAdded == 1 && isRestaurant == true) {
-                            System.out.println("Food Added Successfully");
-                            F.add(f);
+                        if (isRestaurant) {
+                            int foodId = RestaurantManager.getResId(foodRes);
+                            System.out.println("Enter Food Category: ");
+                            String foodCat = scanner.nextLine();
+                            System.out.println("Enter Food Name: ");
+                            String foodName = scanner.nextLine();
+                            System.out.println("Enter Food Price: ");
+                            double foodPrice = Double.parseDouble(scanner.nextLine());
+                            Food f = new Food(foodId, foodCat, foodName, foodPrice);
+                            int foodAdded = RestaurantManager.addFood(f);
+                            if (foodAdded == 1) {
+                                System.out.println("Food Added Successfully");
+                                F.add(f);
+                                change = 1;
+                            } else {
+                                System.out.println("This food already exists in the restaurant.");
+                            }
                         } else {
-                            System.out.println("Food is not valid.");
+                            System.out.println("This restaurant does not exist.");
                         }
                         break;
                     case 5:
@@ -343,12 +365,15 @@ public class RestaurantApp {
             System.out.println("Exiting the system....");
             Thread.sleep(1000);
             scanner.close();
-            System.out.println("Updating info...");
-            Thread.sleep(1000);
-            fileReader.writeFile(F, r);
+            if (change == 1) {
+                System.out.println("Updating info...");
+                Thread.sleep(1000);
+                fileReader.writeFile(F, r);
+            }
             System.out.println("Exit");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
+
