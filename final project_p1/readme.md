@@ -22,9 +22,13 @@ The **Restaurant Database System** boasts a range of features, including:
 
 To run this enchanting program:
 
+**Option 1: Command Line**
 1. Ensure you have the Java Development Kit (JDK) installed.
 2. Compile the program: `javac RestaurantApp.java`
 3. Start the magic: `java RestaurantApp`
+
+**Option 2: Executable (exe)**
+1. Simply double-click the provided `RestaurantApp.exe` file.
 
 ## 🌮 Main Menu Magic
 
@@ -37,7 +41,6 @@ Main Menu:
 3. Add Restaurant
 4. Add Food Item to the Menu
 5. Exit System
-
 
 ## 🍽️ Option (1) - Search Restaurants
 
@@ -85,4 +88,8 @@ The mystical price symbols indicate cost per person for an average meal.
 Explore the enchanted world of restaurants and food items with the **Restaurant Database System**. Let the magic unfold!
 
 ---
-**Note**: This document is a mere enchantment and provides a glimpse into the project's fantastical world. Actual program behavior and implementation may carry their own unique enchantments. Detailed coding and functionality should be developed in accordance with the magical project specifications and requirements.
+**Note**: This document is an imaginative representation, offering a peek into the captivating realm of the project. 
+
+The actual behavior and implementation of the program might possess their distinct characteristics. 
+
+Development of detailed coding and functionality should align with the specific enchantments laid out in the project's specifications and requirements.
