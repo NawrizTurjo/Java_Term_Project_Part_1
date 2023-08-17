@@ -197,7 +197,7 @@ public class RestaurantManager {
         List<Restaurant> r = searchRestaurantByName(restaurant);
         double costliest = -1;
         for (var i : r) {
-            List<Food> menu = i.getmenu();
+            List<Food> menu = i.getMenu();
             for (var j : menu) {
                 if (j.getPrice() > costliest) {
                     costliest = j.getPrice();
@@ -205,7 +205,7 @@ public class RestaurantManager {
             }
         }
         for (var i : r) {
-            List<Food> menu = i.getmenu();
+            List<Food> menu = i.getMenu();
             for (var j : menu) {
                 if (j.getPrice() == costliest) {
                     f.add(j);
