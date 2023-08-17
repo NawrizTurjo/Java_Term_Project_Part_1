@@ -60,7 +60,7 @@ public class restaurantManagerV3 {
                 // isFound = true;
                 // restaurants.get(i).showDetails();
                 res.add(restaurants.get(i));
-                break;
+                // break;
             }
         }
         return res;
@@ -249,11 +249,11 @@ public class restaurantManagerV3 {
         // }
         // }
         restaurant res = getRestaurant(restaurantName);
-        List<food> f =res.isFood(foodName);
+        List<food> f = res.isFood(foodName);
         // if (index != -1) {
-        //     // isFound = true;
-        //     // res.getmenu().get(index).showDetails();
-        //     f.add(res.getmenu().get(index));
+        // // isFound = true;
+        // // res.getmenu().get(index).showDetails();
+        // f.add(res.getmenu().get(index));
         // }
         return f;
         // if (!isFound) {
@@ -277,7 +277,7 @@ public class restaurantManagerV3 {
         // }
         // }
         for (food i : foods) {
-            if (i.getCategory().toUpperCase().equals(category.toUpperCase())) {
+            if (i.getCategory().toUpperCase().contains(category.toUpperCase())) {
                 // isFound = true;
                 // i.showDetails();
                 f.add(i);
@@ -307,7 +307,7 @@ public class restaurantManagerV3 {
         // }
         int Id = getResId(restaurant);
         for (food i : foods) {
-            if (i.getRestaurantId() == Id && i.getCategory().toUpperCase().equals(category.toUpperCase())) {
+            if (i.getRestaurantId() == Id && i.getCategory().toUpperCase().contains(category.toUpperCase())) {
                 // isFound = true;
                 // i.showDetails();
                 f.add(i);
@@ -381,18 +381,20 @@ public class restaurantManagerV3 {
 
     public List<food> costliestFood(String restaurant) {
         List<food> f = new ArrayList<>();
-        restaurant r = getRestaurant(restaurant);
-        List<food> menu = r.getmenu();
-        double costliest = -1;
-        for (var i : menu) {
-            if (i.getPrice() > costliest) {
-                costliest = i.getPrice();
+        if (!isRestaurantValid(restaurant)) {
+            restaurant r = getRestaurant(restaurant);
+            List<food> menu = r.getmenu();
+            double costliest = -1;
+            for (var i : menu) {
+                if (i.getPrice() > costliest) {
+                    costliest = i.getPrice();
+                }
             }
-        }
 
-        for (var i : menu) {
-            if (i.getPrice() == costliest) {
-                f.add(i);
+            for (var i : menu) {
+                if (i.getPrice() == costliest) {
+                    f.add(i);
+                }
             }
         }
         return f;

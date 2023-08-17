@@ -161,18 +161,18 @@ public class restaurant {
     //     return true;
     // }
 
-    public boolean searchCatagory(String catagoryName)
-    {
-        boolean isFound = false;
-        for(String i:category)
-        {
-            if(i.toUpperCase().equals(catagoryName.toUpperCase()))
-            {
-                isFound = true; 
-            }
-        }
-        return isFound;
-    }
+    // public boolean searchCatagory(String catagoryName)
+    // {
+    //     boolean isFound = false;
+    //     for(String i:category)
+    //     {
+    //         if(i.toUpperCase().equals(catagoryName.toUpperCase()))
+    //         {
+    //             isFound = true; 
+    //         }
+    //     }
+    //     return isFound;
+    // }
 
     // public void displayCosliestFood()
     // {
@@ -207,7 +207,7 @@ public class restaurant {
 
         for(int i=0;i<category.size();i++)
         {
-            if(category.get(i).toUpperCase().equals(Category.toUpperCase()))
+            if(category.get(i).toUpperCase().contains(Category.toUpperCase()))
             {
                 isFound = true;
                 break;

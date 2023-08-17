@@ -32,6 +32,11 @@ public class restaurantAppV2 {
                 }
             }
             System.out.println(cat);
+            try {
+                Thread.sleep(1000);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             System.out.println("Menu: ");
             for (food j : i.getmenu()) {
                 showFood(j);
@@ -96,7 +101,7 @@ public class restaurantAppV2 {
                         int choice2 = Integer.parseInt(scanner.nextLine());
                         switch (choice2) {
                             case 1:
-                                System.out.print("Enter a restaurant name: ");
+                                System.out.print("Enter a restaurant name to search: ");
                                 String name1 = scanner.nextLine();
                                 List<restaurant> resName = RestaurantManager.searchRestaurantByName(name1);
                                 showRestaurant(resName);
@@ -137,7 +142,7 @@ public class restaurantAppV2 {
                             case 7:
                                 break;
                             default:
-                                System.out.println("Error: f is not a valid operation.");
+                                System.out.println("Error: This  is not a valid operation.");
                                 break;
                         }
                         break;
@@ -215,7 +220,11 @@ public class restaurantAppV2 {
                                 System.out.println("Showing costliest food in restaurant " + R + "...");
                                 Thread.sleep(1000);
                                 List<food> fCostliest = RestaurantManager.costliestFood(R);
-                                showFood(fCostliest);
+                                if (fCostliest.size() > 0) {
+                                    showFood(fCostliest);
+                                } else {
+                                    System.out.println("There is no food item on the menu.");
+                                }
                                 break;
 
                             case 8:
@@ -288,6 +297,11 @@ public class restaurantAppV2 {
                             System.out.println("Food is not valid.");
                         }
                         break;
+                    case 5:
+                        break;
+                    default:
+                        System.out.println("This is not a valid operation");
+                        break;
                 }
                 System.out.println();
             } while (choice != 5);
@@ -303,7 +317,7 @@ public class restaurantAppV2 {
  * 5,hasbi,2.5,$$$$,sizan,apurbo,jonathon
  * hasbi
  * mohi,Shovon,69.99
- * 6,hasbullah,2.9,$$$$,sizu,apurboss,jonathon,shantoo
+ * 7,hasbullah,2.9,$$$$,sizu,apurboss,jonathon,shantoo
  * hasbullah
  * mohi,Shovon,69.99
  * 
