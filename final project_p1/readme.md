@@ -65,9 +65,9 @@ Several assumptions are made during the implementation of this project. These in
 - Data file formats are correct and do not need validation
 - Command-line interface only, no JavaFX or Java Swing
 
-## Price Symbols ($, $$, $$$)
+## Price Symbols ($ , $$ , $$$)
 
-The price symbols ($, $$, $$$) refer to the cost per person for an average meal: $1 to $10, $11 to $20, and $21 to $30, respectively.
+The price symbols ($ , $$ , $$$) refer to the cost per person for an average meal: $1 to $10, $11 to $20, and $21 to $30, respectively.
 
 ## Running the Program
 
