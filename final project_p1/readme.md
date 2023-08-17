@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="restaurant-logo.png" alt="Restaurant Database System Logo" width="200">
+  <img src="restaurant-logo.jpg" alt="Restaurant Database System Logo" width="200">
   <h1>CSE 108: Java Term Project (Part 1)</h1>
   <h2>Restaurant Database System</h2>
 </div>
