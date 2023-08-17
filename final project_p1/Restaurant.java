@@ -65,7 +65,7 @@ public class Restaurant {
         return category;
     }
 
-    public List<Food> getmenu() {
+    public List<Food> getMenu() {
         return menu;
     }
 
@@ -77,7 +77,7 @@ public class Restaurant {
         this.category = category;
     }
 
-    public void setmenu(List<Food> menu) {
+    public void setMenu(List<Food> menu) {
         this.menu = menu;
     }
 

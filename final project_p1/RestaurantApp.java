@@ -5,7 +5,9 @@ import java.util.Scanner;
 
 public class RestaurantApp {
     public static void showFood(List<Food> f) {
+        int count = 1;
         for (var i : f) {
+            System.out.println(count++);
             System.out.println("Restaurant Id: " + i.getRestaurantId());
             System.out.println("Category: " + i.getCategory());
             System.out.println("Food Name: " + i.getFoodName());
@@ -15,7 +17,9 @@ public class RestaurantApp {
     }
 
     public static void showRestaurant(List<Restaurant> r) {
+        int count = 1;
         for (var i : r) {
+            System.out.println(count++);
             System.out.println("Restaurant ID: " + i.getId());
             System.out.println("Restaurant Name: " + i.getName());
             System.out.println("Score: " + i.getScore());
@@ -36,8 +40,10 @@ public class RestaurantApp {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            System.out.println("Menu: ");
-            for (Food j : i.getmenu()) {
+            System.out.println("Menu: \n");
+            int fcnt = 1;
+            for (Food j : i.getMenu()) {
+                System.out.println("Menu item: "+fcnt++);
                 showFood(j);
             }
         }
