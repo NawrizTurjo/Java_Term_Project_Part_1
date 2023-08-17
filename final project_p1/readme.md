@@ -23,8 +23,8 @@ The **Restaurant Database System** boasts a range of features, including:
 To run this enchanting program:
 
 1. Ensure you have the Java Development Kit (JDK) installed.
-2. Compile the program: `javac restaurantAppV2.java`
-3. Start the magic: `java restaurantAppV2`
+2. Compile the program: `javac RestaurantApp.java`
+3. Start the magic: `java RestaurantApp`
 
 ## 🌮 Main Menu Magic
 
