@@ -284,7 +284,7 @@
 4,McCafe,Medium Mango Pineapple Smoothie,4.29
 4,McCafe,Medium Strawberry Banana Smoothie,4.29
 4,McCafe,Medium Iced Caramel Mocha,4.99
-4,McCafe,Medium Iced Mocha,4.99
+4,McCafe,col Iced Mocha,4.99
 4,McCafe,Medium Caramel Mocha,4.99
 4,McCafe,Medium Mocha,4.99
 4,McCafe Bakery,Strawberry and Creme Pie,1.99
@@ -389,3 +389,4 @@
 1,World Famous Chicken,4 pc. Chicken Combo,14.39
 5,mohi,Shovon,69.99
 6,mohi,Shovon,69.99
+7,khabar,khawa,30.63

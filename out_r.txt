@@ -4,3 +4,4 @@
 4,McDonalds,4.7,$,98346,Burgers,Fast Food,
 5,hasbi,2.5,$$$$,sizan,apurbo,jonathon,
 6,hasbullah,2.9,$$$$,sizan,apurboss,jonathon,shantoo
+7,jonny,1.8,$$$$$,123456,my,nick,name
