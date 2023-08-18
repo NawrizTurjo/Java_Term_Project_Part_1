@@ -43,7 +43,7 @@ public class RestaurantApp {
             System.out.println("Menu: \n");
             int fcnt = 1;
             for (Food j : i.getMenu()) {
-                System.out.println("Menu item: "+fcnt++);
+                System.out.println("Menu item: " + fcnt++);
                 showFood(j);
             }
         }
@@ -319,6 +319,9 @@ public class RestaurantApp {
                             if (array[i] != "") {
                                 cateList.add(array[i]);
                             }
+                            if (i >= 2) {
+                                break;
+                            }
                         }
                         Restaurant newRestaurant = new Restaurant(id, Name, score, price, Z, cateList);
                         RestaurantManager.addRestaurant(newRestaurant);
@@ -382,4 +385,3 @@ public class RestaurantApp {
         }
     }
 }
-

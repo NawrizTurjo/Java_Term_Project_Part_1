@@ -97,7 +97,7 @@ public class RestaurantManager {
         for (String i : AllRestCategories) {
             String resName = "";
             for (Restaurant j : restaurants) {
-                if (j.isCategory(i)) {
+                if (j.isExactCategory(i)) {
                     if (resName.equals("")) {
                         resName = j.getName();
                     } else {

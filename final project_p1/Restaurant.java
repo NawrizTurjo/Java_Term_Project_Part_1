@@ -123,6 +123,21 @@ public class Restaurant {
         return isFound;
     }
 
+    public boolean isExactCategory(String Category)
+    {
+        boolean isFound = false;
+
+        for(int i=0;i<category.size();i++)
+        {
+            if(category.get(i).toUpperCase().equals(Category.toUpperCase()))
+            {
+                isFound = true;
+                break;
+            }
+        }
+        return isFound;
+    }
+
     public List<Food> isFood(String foodName)
     {
         List<Food> f = new ArrayList<>();
